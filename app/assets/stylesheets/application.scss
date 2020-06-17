@@ -1,0 +1,77 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+*/
+
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "bootstrap";
+
+.body{
+  background-color: #31AFD4;
+}
+
+.fondo{
+  text-align: center;
+  font-family: cursive;
+}
+
+.link-to-text-color-black{
+  color: black;
+}
+
+.link-to-text-color-white{
+  color: white;
+}
+
+.top {
+  left: 0;
+  top: 0;
+  width: 100%;
+  background: rgb(45,45,45);
+  background: linear-gradient(90deg, rgba(45,45,45,1) 0%, rgba(17,17,17,1) 58%, rgba(0,0,0,1) 100%);
+  color: white;
+  text-align: left;
+  padding-left: 20px;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
+.new{
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-bottom: 10%;
+}
+
+.table {
+   border-collapse: separate;
+   background: rgb(45,45,45);
+   background: linear-gradient(90deg, rgba(45,45,45,1) 0%, rgba(17,17,17,1) 58%, rgba(0,0,0,1) 100%);
+   color: #fff;
+   margin-left: auto;
+   margin-right: auto;
+
+}
+.td {
+  background-color: #282828;
+}
+
+.th {
+   background: #fff;
+   color: #000;
+}
+
+.map{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+

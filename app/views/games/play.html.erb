@@ -1,0 +1,17 @@
+<p>Let's defeat the enemy!!</p>
+<p>User <%= current_user.email %> playing</p>
+
+<div>
+	<table class="table w-25" >
+        <% Type.all.each_with_index do | t, index | %>
+          <tr>
+            <td class="td">
+              <%=t.name%>
+            </td>
+            <td class="td">
+              <%=t.large%>
+            </td>
+          </tr>
+        <% end -%>
+    </table>
+</div>

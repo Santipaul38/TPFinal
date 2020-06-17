@@ -1,0 +1,31 @@
+<div class="fondo">
+  <p id="notice"><%= notice %></p>
+
+  <h1>Maps</h1>
+
+  <div style="padding-left: 42%">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Columns</th>
+          <th>Rows</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @maps.each do |map| %>
+          <tr>
+            <td><%= map.name %></td>
+            <td><%= map.columns %></td>
+            <td><%= map.rows %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <br>
+
+  <%= link_to 'New Map', new_map_path %>
+</div>

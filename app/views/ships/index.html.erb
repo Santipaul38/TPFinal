@@ -1,0 +1,29 @@
+<div class="fondo">
+  <p id="notice"><%= notice %></p>
+
+  <h1>Ships</h1>
+
+  <div style="padding-left: 42%">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Long</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @ships.each do |ship| %>
+          <tr>
+            <td><%= ship.type.name %></td>
+            <td><%= ship.type.large %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+  <br>
+
+  <%= link_to 'New Ship', new_ship_path, class: "link-to-text-color-black" %>
+</div>
+

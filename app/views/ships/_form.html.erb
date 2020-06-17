@@ -1,0 +1,93 @@
+<div class="text-uppercase" style="text-align: center">
+  <div class="row w-100" style="margin: auto;">
+    <div class="float-lefth" style="padding-left: 1%"> 
+      <button class="btn btn-outline-dark btn-lg">
+        <%= link_to 'Back', ships_path, class: 'link-to-text-color-black' %>
+      </button>
+    </div>
+    <div style="padding-left:  34%">
+      <h1>New Ship</h1>
+    </div>
+    <div class="text-right" style="padding-left: 25%">
+      <button class="btn btn-outline-dark btn-lg" >
+        <%= link_to 'Continue', new_game_path, class: 'link-to-text-color-black' %>
+      </button>
+    </div> 
+  </div>
+  <br>
+
+  <div class="text-center">
+    <%= form_for(@ship) do |form| %>
+    <% if ship.errors.any? %>
+      <div id="error_explanation">
+        <h6 style="font-weight: bold;"><%= pluralize(ship.errors.count, "error") %> prohibited this ship from being saved:</h6>
+
+        <ul>
+          <% ship.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field" >
+      <%= form.label :map_id %>
+      <%= form.collection_select(:map_id, Map.all, :id, :name) %>
+      <a href="/maps/new" class="link-to-text-color-black" >Create new map</a>
+    </div>
+
+    <div class="field" >
+      <%= form.label :"X Position" %>
+      <%= form.number_field :posX %>
+    </div>
+
+    <div class="field" >
+      <%= form.label :"Y Position" %>
+      <%= form.number_field :posY %>
+    </div>
+
+    <div class="field">
+      <%= form.label :type_id %>
+      <%= form.collection_select(:type_id, Type.all, :id, :name) %>
+    </div>
+
+    <div class="field">
+      <%= form.label :orientation %>
+      <%= form.text_field :orientation %>
+      <p>Horizontal or Vertical</p>
+    </div>
+
+    <div class="field" style="display:none;">
+      <%= form.label :user_id %>
+      <%= form.text_field :user_id, value: @currentUser %>
+    </div>
+
+    <br>
+
+    <button onclick="<%form.submit%>" class="btn btn-outline-dark btn-lg">
+        Create Ship
+    </button>
+
+  </div>
+
+    <br>
+      <div>
+        <table class="table w-25" >
+          <th class="th"> Types </th>
+          <th class="th"> Large </th>
+          <% Type.all.each_with_index do | t, index | %>
+            <tr>
+              <td class="td">
+                <%=t.name%>
+              </td>
+              <td class="td">
+                <%=t.large%>
+              </td>
+            </tr>
+          <% end -%>
+        </table>
+      </div>
+    <% end %>
+    <br>
+    <br>
+</div>

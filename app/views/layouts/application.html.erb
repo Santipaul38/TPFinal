@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BatallaNaval</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <nav class="navbar top">
+      <%- if user_signed_in? %>
+        <a href="/" class="h1"> Battleship </a>
+        <div class="btn-group">
+          <% if current_user.id == 1 %>
+            <button class="btn btn-outline-light btn-lg float-right"><%= link_to 'Types', types_path, class: "link-to-text-color-white"%></button>
+          <% end %>
+          <button class="btn btn-outline-light btn-lg float-right">
+            <%= link_to('Logout', destroy_user_session_path, :method => 'delete', class: "link-to-text-color-white") %>
+          </button>
+        </div>
+      <%- else %>
+        <a class="h1 text-center w-100" style="font-weight: bold;"> B a t t l e s h i p </a>  
+      <% end %> 
+    </nav> 
+  </head>
+
+  <body class="body">           
+    <%= yield %>
+  </body>
+</html>

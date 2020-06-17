@@ -1,0 +1,24 @@
+<div class="text-center">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Map:</strong>
+  <%= @ship.map.name %>
+</p>
+
+<p>
+  <strong>Ship:</strong>
+  <%= @ship.type.name %>
+</p>
+
+<p>
+  <strong>Long:</strong>
+  <%= @ship.type.large %>
+</p>
+
+
+<%= link_to 'Ok!', new_ship_path, class: "link-to-text-color-black" %>
+
+</div>
+
+
